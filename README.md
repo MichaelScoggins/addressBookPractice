@@ -1,20 +1,27 @@
-20pts - Code Plan - Include this in a README.md file in your folder with comment in your code.
-20pts - Can add People to Players - When clicked the people are added to the Players column and removed from the People list while getting new values of a player added to them.
-20pts - Can add Players to different Teams - When we click on the blue button the Player is added to the blue team and removed from the Player list while also getting the keys color and mascot extended to them when they are moved to a team.
-20pts - Uses class - This is not a hack job. You should use class to add the new properties you need and extend when you need.
-20pts - Minimum 3 Unit Tests - Use Mocha and Chai to give us at least 3 unit tests that prove a person becomes a player and a player becomes a teammate.
+In pairs, create a list of users and display their info
+Instructions
 
-// Once you understand the challenge, whiteboard the logic.
-// Create a list of steps your app needs to do (code plan).
-// Translate to pseudo code.
-// Translate to JavaScript on paper.
-// /////////////Make a repo, clone, open and copy/paste the starter code into two new files: index.html and main.js
-// Start by working through the existing code to understand it and write comments explaining what each line does.
-// Put your code plan in the README.md file or your repo
-// Work through the follow challenges:
-// Use the class keyword to create a template of a dodgeBallPlayer that requires canThrowBall, canDodgeBall, hasPaid, isHealthy, yearsExperience.
-// Push these new dodge ball Player objects into a new array and then display them in the DOM as available players to pick.
-// Add a button to each new player that will allow each one to be selected for either Blue Team or Red Team and now has mascot and teamColor
-// Use the this keyword to assign each player to a team with an onclick. Assign them to either Blue Team or Red Team.
-// Display the two teams in a new list in the DOM with appropriate titles.
-// Create 3 tests for your application.
+    Read these instructions and understand the requirements FIRST.
+    Whiteboard your app
+    Make a code plan
+    Pseudo code and then translate to JavaScript
+    Create a new repo (name it descriptively well), clone it to your local machine and share it with your partner
+    Open the directory and create an index.html and main.js file to fetch a user and display them one at at time
+    Use the API: https://randomuser.me/api/ to fetch a user now
+    Fetch a new user multiple times and store them in an array
+    Then list out all the users in your address book array by name and picture
+    Figure out how to fetch multiple users in one fetch request
+    Fetch multiple users on window load
+    Add a button to each user that when clicked displays the rest of their information like DOB, address and so forth
+    Once you have the functionality working, feel free to style and structure your address book with CSS and HTML
+    YOU KNOW HOW TO DO ALL OF THIS BY NOW. TRUST YOURSELF!!
+
+extra credit
+Display your users alphabetically
+Add another button to hide the information
+Request only users from AU, then US, then FR and then GB
+Figure out how to only request name, picture and cell
+
+    Figure out how to exclude: dob, registered, nationality, location
+    ABSOLUTELY THE LAST THING YOU SHOULD DO:
+        Style your address book with some flare by adding a CSS file
