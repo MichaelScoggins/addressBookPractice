@@ -1,72 +1,79 @@
-let arrayOfPosts
-
+let arrayOfPeople
+const allPosts = document.getElementById("all-posts")
 // This function waits for the web page to be loaded, when it does it will run the code inside of it which happens to be getPosts()
 window.onload = function () {
   getPosts()
+  setTimeout(displayStuff, 400)
 }
 
-// This function is going to make a fetch request to the URL inside its parameter brackets (). Then it will turn the response (data it's getting back), saved here as res. The res.json will not be saved as posts and saved into the variable, arrayOfPosts
+// This function is going to make a fetch request to the URL inside its parameter brackets (). Then it will turn the response (data it's getting back), saved here as res. The res.json will not be saved as posts and saved into the variable, arrayOfPeople
 const getPosts = () => {
-  fetch("http://jsonplaceholder.typicode.com/posts")
+  fetch("https://randomuser.me/api/?results=400")
     .then((res) => res.json())
-    .then((posts) => (arrayOfPosts = posts))
+    .then((users) => (arrayOfPeople = users.results))
 }
 
 // This function logs the results in your browser's console
 const consolePosts = () => {
-  console.log(arrayOfPosts)
+  console.log(arrayOfPeople)
 }
 
 // this function creates elements inside the all-posts ul, then appends text inside it with the posts that were returned in the request.
-const displayPost = () => {
-  clearChildren()
-  const allPosts = document.getElementById("all-posts")
-  arrayOfPosts.map((post, index) => {
+const displayStuff = function () {
+  arrayOfPeople.map((person) => {
     const li = document.createElement("li")
     const text = document.createTextNode(
-      `#${index}, Title: ${post.title}:  ${post.body}, by user: ${post.userId}`
+      `${person.name.first} ${person.name.last} 
+      //CONTACT//: ${person.email}`
     )
     li.appendChild(text)
     allPosts.append(li)
-    h3.innerText = "All Posts"
   })
+  h3.innerText = "All Posts"
 }
+const displayPost = () => {
+  clearChildren()
+  displayStuff()
+}
+
 const fetch5Post = () => {
   clearChildren()
-  const allPosts = document.getElementById("all-posts")
-  arrayOfPosts.map((post, index) => {
-    if (index < 6) {
-      const li = document.createElement("li")
-      const text = document.createTextNode(
-        `#${index}, Title: ${post.title}:  ${post.body}, by user: ${post.userId}`
-      )
-      li.appendChild(text)
-      allPosts.append(li)
-      h3.innerText = "First 5 Posts"
-    }
+  arrayOfPeople.map((person) => {
+    const li = document.createElement("li")
+    const text = document.createTextNode(
+      `${person.name.first} ${person.name.last} DOB: ${person.dob.date} AGE: ${person.dob.age}`
+    )
+    li.appendChild(text)
+    allPosts.append(li)
   })
+  h3.innerText = "DOB"
 }
 const displayComments = () => {
   clearChildren()
-  const allPosts = document.getElementById("all-posts")
-  arrayOfPosts.map((post, index) => {
+  arrayOfPeople.map((person) => {
     const li = document.createElement("li")
-    const text = document.createTextNode(`#${index}, Comments: ${post.body}:`)
+    const text = document.createTextNode(
+      `${person.name.first} ${person.name.last} LOCATION: ${person.location.city} AGE: ${person.dob.age}`
+    )
     li.appendChild(text)
     allPosts.append(li)
-    h3.innerText = "Comments"
   })
+  h3.innerText = "LOCATION"
 }
 const displayUserIDs = () => {
   clearChildren()
-  const allPosts = document.getElementById("all-posts")
-  arrayOfPosts.map((post, index) => {
+  arrayOfPeople.map((person) => {
     const li = document.createElement("li")
-    const text = document.createTextNode(`#${index}: user ${post.userId}`)
+    const photo = document.createElement("img")
+    photo.src = person.picture.large
+    const text = document.createTextNode(
+      `${person.name.first} ${person.name.last}'s Photo`
+    )
+    li.appendChild(photo)
     li.appendChild(text)
     allPosts.append(li)
-    h3.innerText = "User IDs"
   })
+  h3.innerText = "User IDs"
 }
 
 const clearChildren = () => {
