@@ -36,7 +36,7 @@ const displayPost = () => {
   displayStuff()
 }
 
-const fetch5Post = () => {
+const displayDOB = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
     const li = document.createElement("li")
@@ -48,7 +48,7 @@ const fetch5Post = () => {
   })
   h3.innerText = "DOB"
 }
-const displayComments = () => {
+const displayLocation = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
     const li = document.createElement("li")
@@ -60,7 +60,7 @@ const displayComments = () => {
   })
   h3.innerText = "LOCATION"
 }
-const displayUserIDs = () => {
+const displayPhotoIDs = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
     const li = document.createElement("li")
