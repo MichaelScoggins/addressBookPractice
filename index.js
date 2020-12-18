@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 let arrayOfPeople
 const allPosts = document.getElementById("all-posts")
 // This function waits for the web page to be loaded, when it does it will run the code inside of it which happens to be getPosts()
@@ -48,6 +49,7 @@ const displayDOB = () => {
   })
   h3.innerText = "DOB"
 }
+
 const displayLocation = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
@@ -60,6 +62,7 @@ const displayLocation = () => {
   })
   h3.innerText = "LOCATION"
 }
+
 const displayPhotoIDs = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
@@ -82,5 +85,5 @@ const clearChildren = () => {
     poop.removeChild(poop.firstChild)
   }
 }
-
 // Your job now is to follow the functions above and use them as templates to build the functionality that the buttons in the index.html file already have laid out. This way you can learn how to build fetch requests and work with other APIs and become a real developer!!
+
