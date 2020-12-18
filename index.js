@@ -6,16 +6,19 @@ window.onload = function () {
   getPosts()
   setTimeout(displayStuff, 400)
 }
+
 // This function is going to make a fetch request to the URL inside its parameter brackets (). Then it will turn the response (data it's getting back), saved here as res. The res.json will not be saved as posts and saved into the variable, arrayOfPeople
 const getPosts = () => {
   fetch("https://randomuser.me/api/?results=400")
     .then((res) => res.json())
     .then((users) => (arrayOfPeople = users.results))
 }
+
 // This function logs the results in your browser's console
 const consolePosts = () => {
   console.log(arrayOfPeople)
 }
+
 // this function creates elements inside the all-posts ul, then appends text inside it with the posts that were returned in the request.
 const displayStuff = function () {
   arrayOfPeople.map((person) => {
@@ -34,7 +37,6 @@ const displayPost = () => {
   displayStuff()
 }
 
-const fetch5Post = () => {
 const displayDOB = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
@@ -47,7 +49,7 @@ const displayDOB = () => {
   })
   h3.innerText = "DOB"
 }
-const displayComments = () => {
+
 const displayLocation = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
@@ -60,7 +62,7 @@ const displayLocation = () => {
   })
   h3.innerText = "LOCATION"
 }
-const displayUserIDs = () => {
+
 const displayPhotoIDs = () => {
   clearChildren()
   arrayOfPeople.map((person) => {
@@ -76,6 +78,7 @@ const displayPhotoIDs = () => {
   })
   h3.innerText = "User IDs"
 }
+
 const clearChildren = () => {
   let poop = document.getElementById("all-posts")
   while (poop.firstChild) {
@@ -83,3 +86,4 @@ const clearChildren = () => {
   }
 }
 // Your job now is to follow the functions above and use them as templates to build the functionality that the buttons in the index.html file already have laid out. This way you can learn how to build fetch requests and work with other APIs and become a real developer!!
+
